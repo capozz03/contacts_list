@@ -1,18 +1,39 @@
 import { Button, Form, Input } from "antd";
-import React from "react";
+import axios from "axios";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router";
+import { userAuthAsync } from "../../store/slice/users/asyncActions";
+import { getUserToken } from "../../store/slice/users/selectors";
 import style from "./index.module.scss";
 
 const { Item } = Form;
 const { Password } = Input;
 
+type TFormValues = {
+  email: string;
+  password: string;
+};
+
 const AuthPage = () => {
-  const onFinish = (values: any) => {
-    console.log("Success:", values);
+  const navigate = useNavigate();
+  const dispatch = useDispatch<any>();
+  const token = useSelector(getUserToken);
+  
+  const onFinish = ({ email, password }: TFormValues) => {
+    console.log(email,password)
+    dispatch(userAuthAsync({ email, password }));
   };
 
   const onFinishFailed = (errorInfo: any) => {
     console.log("Failed:", errorInfo);
   };
+
+  useEffect(() => {
+    if (token) {
+      navigate('/');
+    }
+  }, [token]);
 
   return (
     <div className={style.authPage}>
@@ -29,7 +50,7 @@ const AuthPage = () => {
           autoComplete="off"
         >
           <Item
-            name="username"
+            name="email"
             rules={[{ required: true, message: "Логин обязателен" }]}
           >
             <Input className={style.formUsername} placeholder="Логин" />
