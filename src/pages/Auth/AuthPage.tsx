@@ -1,10 +1,9 @@
 import { Button, Form, Input } from "antd";
-import axios from "axios";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
-import { userAuthAsync } from "../../store/slice/users/asyncActions";
-import { getUserToken } from "../../store/slice/users/selectors";
+import { userAuthAsync } from "../../store/slice/userAuth/asyncActions";
+import { getUserToken } from "../../store/slice/userAuth/selectors";
 import style from "./index.module.scss";
 
 const { Item } = Form;
@@ -33,13 +32,10 @@ const AuthPage = () => {
     if (token) {
       navigate('/');
     }
-  }, [token]);
+  }, [navigate, token]);
 
   return (
     <div className={style.authPage}>
-      <header className={style.header}>
-        <div className={style.headerLogo}>Список контактов</div>
-      </header>
       <h3 className={style.authLogo}>Вход</h3>
       <div className={style.auth}>
         <Form

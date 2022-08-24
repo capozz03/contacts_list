@@ -1,70 +1,76 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "qwerty",
-      "email": "qwerty@email.com",
-      "password": "User_qwerty"
-    },
-    {
       "id": 2,
-      "name": "qwerty1",
-      "email": "qwerty1@email.com",
-      "password": "User_qwerty1"
+      "name": "Фигма",
+      "logo": "https://avatars.dicebear.com/api/avataaars/qwerty2.svg",
+      "description": "Дома"
     },
     {
       "id": 3,
-      "name": "qwerty2",
-      "email": "qwerty2@email.com",
-      "password": "User_qwerty2"
-    },
-    {
-      "id": 4,
-      "name": "qwerty3",
-      "email": "qwerty3@email.com",
-      "password": "User_qwerty3"
+      "name": "qwerty2asd",
+      "logo": "https://avatars.dicebear.com/api/avataaars/qwerty3.svg"
     },
     {
       "id": 5,
-      "name": "qwerty4",
-      "email": "qwerty4@email.com",
-      "password": "User_qwerty4"
-    },
-    {
-      "id": 6,
-      "name": "qwerty5",
-      "email": "qwerty5@email.com",
-      "password": "User_qwerty5"
+      "name": "qwerty4asd",
+      "logo": "https://avatars.dicebear.com/api/avataaars/qwerty5.svg"
     },
     {
       "id": 7,
-      "name": "qwerty6",
-      "email": "qwerty6@email.com",
-      "password": "User_qwerty6"
+      "name": "qwerty7",
+      "logo": "https://avatars.dicebear.com/api/avataaars/qwerty7.svg"
     },
     {
       "id": 8,
-      "name": "qwerty7",
-      "email": "qwerty7@email.com",
-      "password": "User_qwerty7"
+      "name": "qwerty8",
+      "logo": "https://avatars.dicebear.com/api/avataaars/qwerty8.svg"
     },
     {
       "id": 9,
-      "name": "qwerty8",
-      "email": "qwerty8@email.com",
-      "password": "User_qwerty8"
+      "name": "qwerty9",
+      "logo": "https://avatars.dicebear.com/api/avataaars/qwerty9.svg",
+      "description": "Бодрость :)"
     },
     {
       "id": 10,
-      "name": "qwerty9",
-      "email": "qwerty9@email.com",
-      "password": "User_qwerty9"
+      "name": "qwerty10",
+      "logo": "https://avatars.dicebear.com/api/avataaars/qwerty10.svg"
     },
     {
-      "id": 1,
-      "name": "qwerty10",
-      "email": "11",
-      "password": "11"
+      "id": 11,
+      "name": "qwerty11",
+      "logo": "https://avatars.dicebear.com/api/avataaars/qwerty11.svg"
+    },
+    {
+      "name": "honor",
+      "description": "111",
+      "logo": "https://avatars.dicebear.com/api/avataaars/honor.svg",
+      "id": 13
+    },
+    {
+      "name": "honorasd",
+      "description": "111",
+      "logo": "https://avatars.dicebear.com/api/avataaars/honorasd.svg",
+      "id": 14
+    },
+    {
+      "name": "hon",
+      "description": "",
+      "logo": "https://avatars.dicebear.com/api/avataaars/hon.svg",
+      "id": 15
+    },
+    {
+      "name": "Петр Ян",
+      "description": "Позитив",
+      "logo": "https://avatars.dicebear.com/api/avataaars/Петр Ян.svg",
+      "id": 16
+    },
+    {
+      "name": "Венера",
+      "description": "На работе!",
+      "logo": "https://avatars.dicebear.com/api/avataaars/Венера.svg",
+      "id": 17
     }
   ]
 }

@@ -1,0 +1,20 @@
+@import "src/shared/assets/styles";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  border-bottom: 1px solid #ebe7ff;
+}
+
+.headerLogo {
+  font: $h1-light;
+  margin-left: 15px;
+}
+
+.exitBtn {
+  margin-right: 15px;
+}
