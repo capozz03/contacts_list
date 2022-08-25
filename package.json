@@ -15,6 +15,7 @@
     "@types/react-dom": "^18.0.6",
     "antd": "^4.22.6",
     "axios": "^0.27.2",
+    "json-server": "^0.17.0",
     "node-sass": "^7.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -34,7 +35,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "auth": "cd server && node server.js",
-    "db": "cd server && json-server -w users.json -p 3001",
+    "db": "json-server -w users.json -p 3001",
     "server": "concurrently \"npm run db\" \"npm run auth\"",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"

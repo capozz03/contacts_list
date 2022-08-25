@@ -4,7 +4,7 @@ const jsonServer = require("json-server");
 const jwt = require("jsonwebtoken");
 
 const server = jsonServer.create();
-const router = jsonServer.router('./../db.json')
+const router = jsonServer.router('../db.json')
 const userdb = JSON.parse(fs.readFileSync("./users.json", "utf-8"));
 
 server.use(bodyParser.urlencoded({
@@ -27,6 +27,7 @@ function isLoginAuthenticated({
   email,
   password
 }) {
+
   return (
     userdb.users.findIndex(
       (user) => user.email === email && user.password === password
@@ -64,4 +65,6 @@ server.post("/api/auth/login", (req, res) => {
 
 server.use(router)
 
-server.listen(3001);
+server.listen(3001, () => {
+  console.log("Running fake api json server");
+});
