@@ -4,10 +4,10 @@
 
 Версия  [Node.js](https://nodejs.org/) v16.13.2.
 
-Установить все зависимости и запустить командy:
+Клонировать репозиторий и запустить командy:
 
 ```sh
-cd contact_list_ts
+cd contact_list
 npm i
 cd server
 npm i
