@@ -27,10 +27,6 @@ function isLoginAuthenticated({
   email,
   password
 }) {
-  console.log(userdb.users.findIndex(
-    (user) => user.email === email))
-  console.log(userdb.users.findIndex(
-    (user) => user.password === password))
   return (
     userdb.users.findIndex(
       (user) => user.email === email && user.password === password
@@ -68,6 +64,4 @@ server.post("/api/auth/login", (req, res) => {
 
 server.use(router)
 
-server.listen(3001, () => {
-  console.log("Running fake api json server");
-});
+server.listen(3001);
