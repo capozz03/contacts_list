@@ -5,3 +5,7 @@ export type TUserAuthState = {
   status: RequestStatuses;
   error: Error | null;
 };
+
+export type TPayloadToken = {
+  access_token: string;
+}

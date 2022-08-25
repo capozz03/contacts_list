@@ -1,13 +1,12 @@
 import { Button } from "antd";
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useAppDispatch } from "../../../hooks/redux";
 import { logoutUser } from "../../../store/slice/userAuth/slice";
 import style from "./index.module.scss";
 
 const Header = () => {
-  const dispatch = useDispatch<any>();
-  const onClick = (e: any) => {
-    e.preventDefault();
+  const dispatch = useAppDispatch();
+  const onClick = () => {
     dispatch(logoutUser());
   };
   return (

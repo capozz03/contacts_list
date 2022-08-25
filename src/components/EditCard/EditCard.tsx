@@ -1,9 +1,8 @@
 import React, { Dispatch, FC, SetStateAction } from "react";
-import { useDispatch } from "react-redux";
+import { useAppDispatch } from "../../hooks/redux";
 import { editUserInfoAsync } from "../../store/slice/userCard/asyncActions";
 import { TUserCardInner, TUserInfo } from "../../store/slice/userCard/entities";
 import ModalCard from "../ModalCard/ModalCard";
-import style from "./index.module.scss";
 
 interface EditCardProps {
   isModalVisible: boolean;
@@ -16,12 +15,14 @@ const EditCard: FC<EditCardProps> = ({
   setIsModalVisible,
   userInfo,
 }) => {
-  const dispatch = useDispatch<any>();
+  const dispatch = useAppDispatch();
 
   const onFinish = (editedUserInfo: TUserInfo) => {
     const userId = userInfo?.id;
-    dispatch(editUserInfoAsync({ userId, editedUserInfo }));
-    setIsModalVisible(false);
+    if (userId) {
+      dispatch(editUserInfoAsync({ userId, editedUserInfo }));
+      setIsModalVisible(false);
+    }
   };
 
   return (

@@ -1,76 +1,76 @@
 {
   "users": [
     {
-      "id": 2,
-      "name": "Фигма",
-      "logo": "https://avatars.dicebear.com/api/avataaars/qwerty2.svg",
-      "description": "Дома"
+      "name": "Иванов Иван",
+      "description": "Дома",
+      "logo": "https://avatars.dicebear.com/api/avataaars/Иванов Иван.svg",
+      "id": 1
     },
     {
-      "id": 3,
-      "name": "qwerty2asd",
-      "logo": "https://avatars.dicebear.com/api/avataaars/qwerty3.svg"
+      "name": "Сергей",
+      "description": "На работе",
+      "logo": "https://avatars.dicebear.com/api/avataaars/Сергей.svg",
+      "id": 2
     },
     {
-      "id": 5,
-      "name": "qwerty4asd",
-      "logo": "https://avatars.dicebear.com/api/avataaars/qwerty5.svg"
+      "name": "Светлана",
+      "description": "Обед",
+      "logo": "https://avatars.dicebear.com/api/avataaars/Светлана.svg",
+      "id": 3
     },
     {
-      "id": 7,
-      "name": "qwerty7",
-      "logo": "https://avatars.dicebear.com/api/avataaars/qwerty7.svg"
+      "name": "Костя Николаев",
+      "description": "Отдыхаю на море",
+      "logo": "https://avatars.dicebear.com/api/avataaars/Костя Николаев.svg",
+      "id": 4
     },
     {
-      "id": 8,
-      "name": "qwerty8",
-      "logo": "https://avatars.dicebear.com/api/avataaars/qwerty8.svg"
-    },
-    {
-      "id": 9,
-      "name": "qwerty9",
-      "logo": "https://avatars.dicebear.com/api/avataaars/qwerty9.svg",
-      "description": "Бодрость :)"
-    },
-    {
-      "id": 10,
-      "name": "qwerty10",
-      "logo": "https://avatars.dicebear.com/api/avataaars/qwerty10.svg"
-    },
-    {
-      "id": 11,
-      "name": "qwerty11",
-      "logo": "https://avatars.dicebear.com/api/avataaars/qwerty11.svg"
-    },
-    {
-      "name": "honor",
-      "description": "111",
-      "logo": "https://avatars.dicebear.com/api/avataaars/honor.svg",
-      "id": 13
-    },
-    {
-      "name": "honorasd",
-      "description": "111",
-      "logo": "https://avatars.dicebear.com/api/avataaars/honorasd.svg",
-      "id": 14
-    },
-    {
-      "name": "hon",
-      "description": "",
-      "logo": "https://avatars.dicebear.com/api/avataaars/hon.svg",
-      "id": 15
+      "name": "Мирослав",
+      "description": "Устал :((",
+      "logo": "https://avatars.dicebear.com/api/avataaars/Мирослав.svg",
+      "id": 5
     },
     {
       "name": "Петр Ян",
-      "description": "Позитив",
+      "description": "",
       "logo": "https://avatars.dicebear.com/api/avataaars/Петр Ян.svg",
-      "id": 16
+      "id": 6
     },
     {
-      "name": "Венера",
-      "description": "На работе!",
-      "logo": "https://avatars.dicebear.com/api/avataaars/Венера.svg",
-      "id": 17
+      "name": "Диман",
+      "description": "Тренируюсь",
+      "logo": "https://avatars.dicebear.com/api/avataaars/Диман.svg",
+      "id": 7
+    },
+    {
+      "name": "Вадим Гречкин",
+      "description": "Сижу на правильном питании",
+      "logo": "https://avatars.dicebear.com/api/avataaars/Вадим Гречкин.svg",
+      "id": 8
+    },
+    {
+      "name": "Олеся",
+      "description": "В отпуске ;)",
+      "logo": "https://avatars.dicebear.com/api/avataaars/Олеся.svg",
+      "id": 9
+    },
+    {
+      "name": "Катя Голованова",
+      "description": "Устала учиться",
+      "logo": "https://avatars.dicebear.com/api/avataaars/Катя Голованова.svg",
+      "id": 10
+    },
+    {
+      "name": "Галия",
+      "description": "В огороде у бабушки",
+      "logo": "https://avatars.dicebear.com/api/avataaars/Галия.svg",
+      "id": 11
+    },
+    {
+      "name": "Феткулов Герман",
+      "description": "Записываю новый альбом",
+      "logo": "https://avatars.dicebear.com/api/avataaars/Феткулов Герман.svg",
+      "id": 12
     }
   ]
 }

@@ -3,7 +3,7 @@ import { clientCookies } from "../../../shared/helpers/cookies";
 import { RequestStatuses } from "../../../shared/helpers/enums";
 import { userSliceActions } from "./actions";
 import { userAuthAsync } from "./asyncActions";
-import { TUserAuthState } from "./entities";
+import { TPayloadToken, TUserAuthState } from "./entities";
 
 const initialState = {
   token: clientCookies.getToken() || null,
@@ -23,7 +23,7 @@ const userAuthSlice = createSlice({
     }),
     [userAuthAsync.fulfilled.type]: (
       state,
-      { payload }: PayloadAction<any>
+      { payload }: PayloadAction<TPayloadToken>
     ) => {
       clientCookies.setToken(payload.access_token);
       return {

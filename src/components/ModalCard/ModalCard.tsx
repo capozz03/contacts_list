@@ -1,7 +1,7 @@
 import { UserOutlined } from "@ant-design/icons";
 import { Avatar, Button, Form, Input, Modal } from "antd";
 import React, { Dispatch, FC, SetStateAction, useEffect } from "react";
-import { TUserCardInner } from "../../store/slice/userCard/entities";
+import { TUserCardInner, TUserInfo } from "../../store/slice/userCard/entities";
 import style from "./index.module.scss";
 
 const { Item } = Form;
@@ -9,7 +9,7 @@ const { Item } = Form;
 interface ModalCardProps {
   isModalVisible: boolean;
   setIsModalVisible: Dispatch<SetStateAction<boolean>>;
-  onFinish: (value: any) => void;
+  onFinish: (value: TUserInfo) => void;
   userInfo: TUserCardInner | null;
   title: string;
   isAddModal?: boolean;

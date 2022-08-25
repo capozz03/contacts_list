@@ -1,8 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RequestStatuses } from "../../../shared/helpers/enums";
-import { userCardSliceActions } from "./actions";
 import { editUserInfoAsync, getUserInfoAsync } from "./asyncActions";
-import { TUserCard, TUserCardInner, TUserInfo } from "./entities";
+import { TUserCard, TUserCardInner } from "./entities";
 
 export const initialState = {
   user: null,
@@ -13,7 +12,7 @@ export const initialState = {
 const userCardSlice = createSlice({
   name: "userCardSlice",
   initialState,
-  reducers: userCardSliceActions,
+  reducers: {},
   extraReducers: {
     [getUserInfoAsync.pending.type]: (state: TUserCard) => ({
       ...state,
@@ -21,7 +20,7 @@ const userCardSlice = createSlice({
     }),
     [getUserInfoAsync.fulfilled.type]: (
       state: TUserCard,
-      { payload }: PayloadAction<any>
+      { payload }: PayloadAction<TUserCardInner>
     ) => ({
       ...state,
       status: RequestStatuses.SUCCESS,
@@ -42,7 +41,7 @@ const userCardSlice = createSlice({
     }),
     [editUserInfoAsync.fulfilled.type]: (
       state: TUserCard,
-      { payload }: PayloadAction<any>
+      { payload }: PayloadAction<TUserCardInner>
     ) => ({
       ...state,
       status: RequestStatuses.SUCCESS,
@@ -60,4 +59,3 @@ const userCardSlice = createSlice({
 });
 
 export const userCardReducer = userCardSlice.reducer;
-export const { clearUserData } = userCardSlice.actions;

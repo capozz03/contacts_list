@@ -1,7 +1,7 @@
 import React, { Suspense, useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import AddCard from "../../components/AddCard/AddCard";
 import EditCard from "../../components/EditCard/EditCard";
+import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import Header from "../../shared/ui/Header/Header";
 import Loader from "../../shared/ui/Loader/Loader";
 import { getUserInfoAsync } from "../../store/slice/userCard/asyncActions";
@@ -18,13 +18,13 @@ const CardComponent = React.lazy(
 );
 
 const ContactsPage = () => {
-  const dispatch = useDispatch<any>();
-  const users = useSelector(getUsersSelector);
-  const userInfo = useSelector(getUserInfo);
-  const isLoading = useSelector(getUsersLoadingStatusSelector);
+  const dispatch = useAppDispatch();
+  const users = useAppSelector(getUsersSelector);
+  const userInfo = useAppSelector(getUserInfo);
+  const isLoading = useAppSelector(getUsersLoadingStatusSelector);
   const [isEditModalVisible, setIsEditModalVisible] = useState(false);
   const [isAddModalVisible, setIsAddModalVisible] = useState(false);
-  const [clickedUserId, setClickedUserId] = useState();
+  const [clickedUserId, setClickedUserId] = useState<number>(0);
 
   useEffect(() => {
     dispatch(getUsersAsync());
@@ -46,10 +46,10 @@ const ContactsPage = () => {
       <div className={style.contactsContainer}>
         <div className={style.flexWrapper}>
           <Suspense fallback={<Loader />}>
-            {users?.map((user, index) => {
+            {users?.map((user, user_id) => {
               return (
                 <CardComponent
-                  key={index}
+                  key={user_id}
                   user={user}
                   isLoading={isLoading}
                   setIsModalVisible={setIsEditModalVisible}

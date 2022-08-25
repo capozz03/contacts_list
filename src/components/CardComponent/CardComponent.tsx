@@ -3,14 +3,15 @@ import Meta from "antd/lib/card/Meta";
 import React, { FC } from "react";
 import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
 import style from "./index.module.scss";
-import { useDispatch } from "react-redux";
 import { deleteUserAsync } from "../../store/slice/userCard/asyncActions";
+import { useAppDispatch } from "../../hooks/redux";
+import { TUserData } from "../../store/slice/users/entities";
 
 interface CardComponentProps {
-  user: any;
+  user: TUserData;
   isLoading: boolean;
   setIsModalVisible: React.Dispatch<React.SetStateAction<boolean>>;
-  setClickedUserId: React.Dispatch<React.SetStateAction<undefined>>;
+  setClickedUserId: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const CardComponent: FC<CardComponentProps> = ({
@@ -19,30 +20,34 @@ const CardComponent: FC<CardComponentProps> = ({
   setIsModalVisible,
   setClickedUserId,
 }) => {
-  const dispatch = useDispatch<any>()
+  const dispatch = useAppDispatch();
   const showEditCard = () => {
     setIsModalVisible(true);
     setClickedUserId(user.id);
   };
 
   const deleteUser = () => {
-    dispatch(deleteUserAsync(user.id))
+    dispatch(deleteUserAsync({ userId: user.id, userName: user.name }));
   };
 
   return (
     <div>
       <Card
-        style={{ width: 300, marginTop: 16 }}
+        className={style.card}
         actions={[
           <EditOutlined key="edit" onClick={showEditCard} />,
-          <DeleteOutlined key="delete" className={style.deleteBtn} onClick={deleteUser} />,
+          <DeleteOutlined
+            key="delete"
+            className={style.deleteBtn}
+            onClick={deleteUser}
+          />,
         ]}
       >
         <Skeleton loading={isLoading} avatar active>
           <Meta
             avatar={<Avatar src={user.logo} />}
             title={user.name}
-            description={user.description}
+            description={user.description ? user.description : "Нет статуса"}
           />
         </Skeleton>
       </Card>

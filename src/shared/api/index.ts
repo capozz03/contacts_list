@@ -15,6 +15,7 @@ export const $api = axios.create({
   },
 });
 
+
 $api.interceptors.request.use((config: AxiosRequestConfig) => {
   const token = clientCookies.getToken();
 

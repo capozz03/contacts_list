@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RequestStatuses } from "../../../shared/helpers/enums";
 import { getUsersAsync, getUsersSearchAsync } from "./asyncActions";
-import { TUsersState } from "./entities";
+import { TUserData, TUsersState } from "./entities";
 
 const initialState = {
   users: [],
@@ -14,42 +14,42 @@ const usersSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: {
-    [getUsersAsync.pending.type]: (state: any) => ({
+    [getUsersAsync.pending.type]: (state: TUsersState) => ({
       ...state,
       status: RequestStatuses.LOADING,
     }),
     [getUsersAsync.fulfilled.type]: (
-      state: any,
-      { payload }: PayloadAction<any>
+      state: TUsersState,
+      { payload }: PayloadAction<TUserData[]>
     ) => ({
       ...state,
       status: RequestStatuses.SUCCESS,
       users: payload,
     }),
     [getUsersAsync.rejected.type]: (
-      state: any,
-      { payload: error }: PayloadAction<any>
+      state: TUsersState,
+      { payload: error }: PayloadAction<Error>
     ) => ({
       users: null,
       status: RequestStatuses.FAILURE,
       error,
     }),
 
-    [getUsersSearchAsync.pending.type]: (state: any) => ({
+    [getUsersSearchAsync.pending.type]: (state: TUsersState) => ({
       ...state,
       status: RequestStatuses.LOADING,
     }),
     [getUsersSearchAsync.fulfilled.type]: (
-      state: any,
-      { payload }: PayloadAction<any>
+      state: TUsersState,
+      { payload }: PayloadAction<TUserData[]>
     ) => ({
       ...state,
       status: RequestStatuses.SUCCESS,
       users: payload,
     }),
     [getUsersSearchAsync.rejected.type]: (
-      state: any,
-      { payload: error }: PayloadAction<any>
+      state: TUsersState,
+      { payload: error }: PayloadAction<Error>
     ) => ({
       users: null,
       status: RequestStatuses.FAILURE,

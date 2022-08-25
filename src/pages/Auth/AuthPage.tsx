@@ -1,7 +1,9 @@
 import { Button, Form, Input } from "antd";
+import { ValidateErrorEntity } from "rc-field-form/lib/interface";
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
+import { useAppDispatch, useAppSelector } from "../../hooks/redux";
+import { openNotificationWithIcon } from "../../shared/helpers/notification";
 import { userAuthAsync } from "../../store/slice/userAuth/asyncActions";
 import { getUserToken } from "../../store/slice/userAuth/selectors";
 import style from "./index.module.scss";
@@ -16,21 +18,25 @@ type TFormValues = {
 
 const AuthPage = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch<any>();
-  const token = useSelector(getUserToken);
-  
+  const dispatch = useAppDispatch();
+  const token = useAppSelector(getUserToken);
+
   const onFinish = ({ email, password }: TFormValues) => {
-    console.log(email,password)
     dispatch(userAuthAsync({ email, password }));
   };
 
-  const onFinishFailed = (errorInfo: any) => {
-    console.log("Failed:", errorInfo);
+  const onFinishFailed = (errorInfo: ValidateErrorEntity<TFormValues>) => {
+    const errors = errorInfo.errorFields.map((err) => err.errors[0]);
+    openNotificationWithIcon(
+      "Ошибка авторизации",
+      `${errors.map((err) => err)}`,
+      "error"
+    );
   };
 
   useEffect(() => {
     if (token) {
-      navigate('/');
+      navigate("/");
     }
   }, [navigate, token]);
 

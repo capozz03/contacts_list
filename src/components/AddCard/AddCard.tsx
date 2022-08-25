@@ -1,7 +1,7 @@
 import { PlusOutlined } from "@ant-design/icons";
 import { Button, Input } from "antd";
 import React, { Dispatch, FC, SetStateAction, useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useAppDispatch } from "../../hooks/redux";
 import { useDebounce } from "../../hooks/useDebounce";
 import { addUserAsync } from "../../store/slice/userCard/asyncActions";
 import { TUserInfo } from "../../store/slice/userCard/entities";
@@ -9,15 +9,13 @@ import { getUsersSearchAsync } from "../../store/slice/users/asyncActions";
 import ModalCard from "../ModalCard/ModalCard";
 import style from "./index.module.scss";
 
-const { Search } = Input;
-
 interface AddCardProps {
   isModalVisible: boolean;
   setIsModalVisible: Dispatch<SetStateAction<boolean>>;
 }
 
 const AddCard: FC<AddCardProps> = ({ isModalVisible, setIsModalVisible }) => {
-  const dispatch = useDispatch<any>();
+  const dispatch = useAppDispatch();
 
   const [value, setValue] = useState<string>("");
   const debouncedValue = useDebounce<string>(value, 500);
