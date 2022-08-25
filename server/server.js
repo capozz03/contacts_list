@@ -4,7 +4,7 @@ const jsonServer = require("json-server");
 const jwt = require("jsonwebtoken");
 
 const server = jsonServer.create();
-const router = jsonServer.router('../db.json')
+const router = jsonServer.router('./db.json')
 const userdb = JSON.parse(fs.readFileSync("./users.json", "utf-8"));
 
 server.use(bodyParser.urlencoded({
@@ -14,6 +14,7 @@ server.use(bodyParser.json());
 server.use(jsonServer.defaults());
 
 const SECRET_KEY = "72676376";
+const port = 3001;
 
 const expiresIn = "1h";
 
@@ -65,6 +66,4 @@ server.post("/api/auth/login", (req, res) => {
 
 server.use(router)
 
-server.listen(3001, () => {
-  console.log("Running fake api json server");
-});
+server.listen(port);

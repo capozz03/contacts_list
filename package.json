@@ -1,6 +1,5 @@
 {
   "name": "contact_list_ts",
-  "homepage": "http://capozz03.github.io/contacts_list",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -35,10 +34,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "auth": "cd server && node server.js",
-    "db": "json-server -w users.json -p 3001",
-    "server": "concurrently \"npm run db\" \"npm run auth\"",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "db": "cd server && json-server -w users.json -p 3001",
+    "server": "concurrently \"npm run db\" \"npm run auth\""
   },
   "eslintConfig": {
     "extends": [
@@ -59,7 +56,6 @@
     ]
   },
   "devDependencies": {
-    "concurrently": "^7.3.0",
-    "gh-pages": "^4.0.0"
+    "concurrently": "^7.3.0"
   }
 }
