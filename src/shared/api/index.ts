@@ -2,7 +2,7 @@ import axios, { AxiosRequestConfig } from 'axios';
 import { clientCookies } from '../helpers/cookies';
 
 export function apiUrl() {
-  const apiHost = 'https://my-json-server.typicode.com/capozz03/contacts_list/';
+  const apiHost = 'http://localhost:3001/';
   return apiHost;
 }
 
